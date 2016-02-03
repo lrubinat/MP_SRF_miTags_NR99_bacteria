@@ -1,0 +1,48 @@
+load_data	<	[<-	c	colnames	colSums	dim	is.na	read.table	row.names<-	setwd	which
+starting_dataset	dim	tb10_mitags
+reads_per_sample_overview1	colSums	min	tb10_mitags
+reads_per_sample_overview2	colSums	max	tb10_mitags
+reads_per_sample_overview3	>	colSums	tb10_mitags	which
+reads_per_sample_overview4	colSums	plot	sort	tb10_mitags
+species_richness_rarefaction1	library	rrarefy	t	tb10_mitags
+species_richness_rarefaction2	dim	otu_tb10_mitags_t_ss13674
+species_richness_rarefaction3	otu_tb10_mitags_t_ss13674	rowSums
+species_richness_rarefaction4	==	colSums	length	otu_tb10_mitags_t_ss13674	which
+species_richness_rarefaction5	==	colSums	dim	otu_tb10_mitags_t_ss13674	which
+shannon_index1	diversity	otu_tb10_mitags_t_ss13674_no_cero
+shannon_index2	boxplot	otu_tb10_mitags_ss13674_div	plot	sort
+richness_otu_no1	otu_tb10_mitags_t_ss13674_no_cero	specnumber
+richness_otu_no2	min	OTUs_per_sample_10_ss13674
+richness_otu_no3	max	OTUs_per_sample_10_ss13674
+richness_otu_no4	boxplot	OTUs_per_sample_10_ss13674	plot	sort
+pielou_index_of_evenness1	log	OTUs_per_sample_10_ss13674	otu_tb10_mitags_ss13674_div
+pielou_index_of_evenness2	boxplot	pielou_evenness_10_ss13674	plot	sort
+OTUs_overall_abundance	colSums	head	otu_tb10_mitags_t_ss13674_no_cero	sort	T
+OTUs_overall_abundance2	colSums	log	otu_tb10_mitags_t_ss13674_no_cero	plot	sort	T
+radfit	colSums	plot	radfit	tb10_mitags_t
+preston_model1	colSums	plot	prestonfit	tb10_mitags_t	veiledspec
+preston_model2	colSums	lines	otu_tb10_mitags_min13674_prestonfit	plot	prestondistr	tb10_mitags_t	veiledspec
+rarefraction_curve	
+beta_div1	boxplot	otu_tb10_mitags_t_ss13674_no_cero	vegdist
+beta_div2	hclust	otu_tb10_mitags_t_ss13674_no_cero.bray	plot
+monoNMDS	monoMDS	otu_tb10_mitags_t_ss13674_no_cero.bray	plot
+metaNMDS	metaMDS	otu_tb10_mitags_t_ss13674_no_cero.bray	plot
+load_geo_data	as.matrix	create.lats	dim	earth.dist	head	library	otu_tb10_mitags_t_ss13674_no_cero	read.table	row.names	row.names<-	T
+working_datasets1	dim	otu_tb10_mitags_t_ss13674_no_cero
+working_datasets2	as.matrix
+working_datasets3	dim	geo_distances_MP_10_ss13674
+working_datasets4	geo_distances_MP_10_ss13674	otu_tb10_mitags_t_ss13674_no_cero.bray	plot
+mantel_correlogram1	geo_distances_MP_10_ss13674	mantel	otu_tb10_mitags_t_ss13674_no_cero.bray
+mantel_correlogram2	geo_distances_MP_10_ss13674	max
+mantel_correlogram3	geo_distances_MP_10_ss13674	min
+mantel_correlogram4	geo_distances_MP_10_ss13674	mantel.correlog	otu_tb10_mitags_t_ss13674_no_cero.bray	plot	seq
+OTUs_mean_relative_abund	as.data.frame	colSums	head	otu_tb10_mitags_t_ss13674_no_cero	rowMeans	t
+OTUs_occurence	>	[<-	as.data.frame	otu_tb10_mitags_t_ss13674_no_cero_t.rabund	rowSums	str
+merge_rabund_peroccur	c	colnames<-	merge	otu_tb10_mitags_t_ss13674_no_cero_t.rabund_means	otu_tb10_mitags_t_ss13674_no_cero_t.rabund_means.occurence_perc	row.names<-
+abund_vs_occurence_table	$	abline	otu_tb10_mitags_ss13674_rabund_percoccur	plot
+abundant_OTUs	>	$	c	dim	order	otu_tb10_mitags_ss13674_rabund_percoccur	T
+abundant_OTUs2	
+select_cosmopolitan	>	$	c	dim	order	otu_tb10_mitags_ss13674_rabund_percoccur	T
+percentage_cosmopolitan	
+rare_OTUs	<	>	$	&	dim	otu_tb10_mitags_ss13674_rabund_percoccur
+otu_col_chech	dim	otu_tb10_mitags_ss13674_rabund_percoccur	tb10_mitags
